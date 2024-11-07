@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars List</title>
+</head>
+<body>
+<h1>List of Cars</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Model</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Цикл по списку машин, переданному в модель -->
+    <tr th:each="car, iterStat : ${cars}">
+        <td th:text="${iterStat.index + 1}"></td>
+        <td th:text="${car}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

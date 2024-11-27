@@ -1,4 +1,4 @@
-package web.config;
+package web.service;
 
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,9 @@ public class CarService {
         carList.add("Honda");
         carList.add("Mercedes");
     }
-    public List<String> getCarList(int count) {
+    public List<String> getCarsWithLimit(Integer count) {
+        int limit = (count != null) ? count : Integer.MAX_VALUE;
+
         if (count >= carList.size() || count <= 0) {
             return carList;
         }

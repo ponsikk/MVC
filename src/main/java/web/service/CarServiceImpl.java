@@ -1,17 +1,16 @@
 package web.service;
 
 import org.springframework.stereotype.Service;
-import web.rep.CarServiceRep;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CarService implements CarServiceRep {
+public class CarServiceImpl implements CarService {
 
     private final List<String> carList = new ArrayList<>();
 
-    public CarService() {
+    public CarServiceImpl() {
         carList.add("BMW");
         carList.add("Audi");
         carList.add("Ford");
@@ -25,5 +24,10 @@ public class CarService implements CarServiceRep {
             return carList;
         }
         return carList.subList(0, count);
+    }
+
+    @Override
+    public List<String> getList() {
+        return carList;
     }
 }
